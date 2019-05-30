@@ -242,11 +242,11 @@ public class Hero extends Actor
             // Set image
             if (horizontalDirection == FACING_RIGHT)
             {
-                setImage("hero-jump-down-right.png");
+                setImage("taizo-starting.png");
             }
             else
             {
-                setImage("hero-jump-down-left.png");
+                setImage("taizo-starting.png");
             }
         }
 
