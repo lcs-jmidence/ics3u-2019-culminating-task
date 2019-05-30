@@ -96,7 +96,6 @@ public class Hero extends Actor
     public void act() 
     {
         checkKeys();
-        checkFall();
         if (!isGameOver)
         {
             checkGameOver();
@@ -132,56 +131,7 @@ public class Hero extends Actor
                 jump();
             }
         }
-    }
-
-    /**
-     * Should the hero be falling right now?
-     */
-    public void checkFall()
-    {
-        if (onPlatform())
-        {
-            // Stop falling
-            deltaY = 0;
-
-            // Set image
-            if (horizontalDirection == FACING_RIGHT && Greenfoot.isKeyDown("right") == false)
-            {
-                setImage("taizo-starting.png");
-            }
-            else if (horizontalDirection == FACING_LEFT && Greenfoot.isKeyDown("left") == false)
-            {
-                setImage("taizo-starting.png");
-            }
-
-            // Get a reference to any object that's created from a subclass of Platform,
-            // that is below (or just below in front, or just below behind) the hero
-            Actor directlyUnder = getOneObjectAtOffset(0, getImage().getHeight() / 2, Platform.class);
-            Actor frontUnder = getOneObjectAtOffset(getImage().getWidth() / 3, getImage().getHeight() / 2, Platform.class);
-            Actor rearUnder = getOneObjectAtOffset(0 - getImage().getWidth() / 3, getImage().getHeight() / 2, Platform.class);
-
-            // Bump the hero back up so that they are not "submerged" in a platform object
-            if (directlyUnder != null)
-            {
-                int correctedYPosition = directlyUnder.getY() - directlyUnder.getImage().getHeight() / 2 - this.getImage().getHeight() / 2;
-                setLocation(getX(), correctedYPosition);
-            }
-            if (frontUnder != null)
-            {
-                int correctedYPosition = frontUnder.getY() - frontUnder.getImage().getHeight() / 2 - this.getImage().getHeight() / 2;
-                setLocation(getX(), correctedYPosition);
-            }
-            if (rearUnder != null)
-            {
-                int correctedYPosition = rearUnder.getY() - rearUnder.getImage().getHeight() / 2 - this.getImage().getHeight() / 2;
-                setLocation(getX(), correctedYPosition);
-            }
-        }
-        else
-        {
-            fall();
-        }
-    }
+    }  
 
     /**
      * Is the hero currently touching a solid object? (any subclass of Platform)

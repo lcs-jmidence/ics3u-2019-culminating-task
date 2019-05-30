@@ -23,11 +23,11 @@ public class SideScrollingWorld extends World
     //              Should be a resolution that's a multiple of TILE_SIZE
     private static final int VISIBLE_WIDTH = 480;
     private static final int VISIBLE_HEIGHT = 640;
-    
+
     // Additional useful constants based on world size
     public static final int HALF_VISIBLE_WIDTH = VISIBLE_WIDTH / 2;
     private static final int HALF_VISIBLE_HEIGHT = VISIBLE_HEIGHT / 2;
-    
+
     // Defining the boundaries of the scrollable world
     // TO STUDENTS: Modify SCROLLABLE_WIDTH if you wish to have a longer level
     public static final int SCROLLABLE_WIDTH = VISIBLE_WIDTH * 3;
@@ -54,6 +54,7 @@ public class SideScrollingWorld extends World
 
         // Game on
         isGameOver = false;
+        prepare();
     }
 
     /**
@@ -151,7 +152,6 @@ public class SideScrollingWorld extends World
         }
     }
 
-
     /**
      * Act
      * 
@@ -229,6 +229,14 @@ public class SideScrollingWorld extends World
     public void setGameOver()
     {
         isGameOver = true;
+    }
+
+    /**
+     * Prepare the world for the start of the program.
+     * That is: create the initial objects and add them to the world.
+     */
+    private void prepare()
+    {
     }
 }
 
