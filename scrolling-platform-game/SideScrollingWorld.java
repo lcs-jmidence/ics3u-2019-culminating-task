@@ -63,7 +63,7 @@ public class SideScrollingWorld extends World
     private void setup()
     {
         // TO STUDENTS: Add, revise, or remove methods as needed to define your own game's world
-        addLeftGround();
+        bottomBorder();
         addFences();
         addMetalPlateSteps();
         addRightGround();
@@ -73,10 +73,10 @@ public class SideScrollingWorld extends World
     /**
      * Add blocks to create the ground to walk on at bottom-left of scrollable world.
      */
-    private void addLeftGround()
+    private void bottomBorder()
     {
-        // How many tiles will cover the bottom of the initial visible area of screen?
-        final int tilesToCreate = getWidth() / TILE_SIZE;
+        // Make the tiles the width of the world
+        final int tilesToCreate = getWidth();
 
         // Loop to create and add the tile objects
         for (int i = 0; i < tilesToCreate; i += 1)
@@ -87,10 +87,10 @@ public class SideScrollingWorld extends World
             int y = getHeight() - HALF_TILE_SIZE;
 
             // Create a ground tile
-            Ground groundTile = new Ground(x, y);
+            MetalPlate metalBorder = new MetalPlate(x, y);
 
             // Add the objects
-            addObject(groundTile, x, y);
+            addObject(metalBorder, x, y);
         }
     }
 
