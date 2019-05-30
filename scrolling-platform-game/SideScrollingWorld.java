@@ -65,6 +65,7 @@ public class SideScrollingWorld extends World
         // TO STUDENTS: Add, revise, or remove methods as needed to define your own game's world
         bottomBorder();
         leftBorder();
+        rightBorder();
         addFences();
         addMetalPlateSteps();
         addRightGround();
@@ -104,6 +105,26 @@ public class SideScrollingWorld extends World
         {
             // Add MetalPlates objects at bottom of screen.
             int x = HALF_TILE_SIZE;
+            int y = i * TILE_SIZE + HALF_TILE_SIZE;
+
+            // Create a MetalPlate tile
+            MetalPlate metalBorder = new MetalPlate(x, y);
+
+            // Add the objects
+            addObject(metalBorder, x, y);
+        }
+    }
+    
+    private void rightBorder()
+    {
+        // Make the tiles the width of the world
+        final int tilesToCreate = getHeight();
+
+        // Loop to create and add the tile objects
+        for (int i = 0; i < tilesToCreate; i += 1)
+        {
+            // Add MetalPlates objects at bottom of screen.
+            int x = SCROLLABLE_WIDTH - HALF_TILE_SIZE;
             int y = i * TILE_SIZE + HALF_TILE_SIZE;
 
             // Create a MetalPlate tile
