@@ -69,7 +69,7 @@ public class Hero extends Actor
         horizontalDirection = FACING_RIGHT;
 
         // Set image
-        setImage("hero-jump-down-right.png");
+        setImage("taizo-starting.png");
 
         // Initialize the 'walking' arrays
         walkingRightImages = new GreenfootImage[COUNT_OF_WALKING_IMAGES];
@@ -78,7 +78,7 @@ public class Hero extends Actor
         // Load walking images from disk
         for (int i = 0; i < walkingRightImages.length; i++)
         {
-            walkingRightImages[i] = new GreenfootImage("hero-walk-right-" + i + ".png");
+            walkingRightImages[i] = new GreenfootImage("taizo-walk-right-" + i + ".png");
 
             // Create left-facing images by mirroring horizontally
             walkingLeftImages[i] = new GreenfootImage(walkingRightImages[i]);
