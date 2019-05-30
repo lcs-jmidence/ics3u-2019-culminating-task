@@ -147,11 +147,11 @@ public class Hero extends Actor
             // Set image
             if (horizontalDirection == FACING_RIGHT && Greenfoot.isKeyDown("right") == false)
             {
-                setImage("hero-right.png");
+                setImage("taizo-starting.png");
             }
             else if (horizontalDirection == FACING_LEFT && Greenfoot.isKeyDown("left") == false)
             {
-                setImage("hero-left.png");
+                setImage("taizo-starting.png");
             }
 
             // Get a reference to any object that's created from a subclass of Platform,
