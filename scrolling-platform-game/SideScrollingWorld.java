@@ -21,17 +21,17 @@ public class SideScrollingWorld extends World
     // World size constants
     // TO STUDENTS: Modify only if you're sure
     //              Should be a resolution that's a multiple of TILE_SIZE
-    private static final int VISIBLE_WIDTH = 480;
-    private static final int VISIBLE_HEIGHT = 640;
-
+    private static final int VISIBLE_WIDTH = 640;
+    private static final int VISIBLE_HEIGHT = 480;
+    
     // Additional useful constants based on world size
     public static final int HALF_VISIBLE_WIDTH = VISIBLE_WIDTH / 2;
-    public static final int HALF_VISIBLE_HEIGHT = VISIBLE_HEIGHT / 2;
-
+    private static final int HALF_VISIBLE_HEIGHT = VISIBLE_HEIGHT / 2;
+    
     // Defining the boundaries of the scrollable world
     // TO STUDENTS: Modify SCROLLABLE_WIDTH if you wish to have a longer level
-    public static final int SCROLLABLE_WIDTH = VISIBLE_WIDTH ;
-    public static final int SCROLLABLE_HEIGHT = VISIBLE_HEIGHT * 3;
+    public static final int SCROLLABLE_WIDTH = VISIBLE_WIDTH * 3;
+    private static final int SCROLLABLE_HEIGHT = VISIBLE_HEIGHT;
 
     // Hero
     Hero theHero;
@@ -62,22 +62,10 @@ public class SideScrollingWorld extends World
     private void setup()
     {
         // TO STUDENTS: Add, revise, or remove methods as needed to define your own game's world
-        // addLeftGround();
-        // addFences();
-        // addMetalPlateSteps();
-        // addClouds();
-        // addRightGround();
-
-        // Add some metal plates //14
-        for (int i = 0; i <= 30; i += 1)
-        {
-            int x = HALF_TILE_SIZE + i * TILE_SIZE; 
-            int y = 4 * TILE_SIZE ;
-            // Create and add to world
-            MetalPlate plate = new MetalPlate(x, y);
-            addObject(plate, x, y);
-        }
-
+        addLeftGround();
+        addFences();
+        addMetalPlateSteps();
+        addRightGround();
         addHero();
     }
 
@@ -163,6 +151,7 @@ public class SideScrollingWorld extends World
         }
     }
 
+
     /**
      * Act
      * 
@@ -184,7 +173,7 @@ public class SideScrollingWorld extends World
         theHero = new Hero(initialX);
 
         // Add hero in bottom left corner of screen
-        addObject(theHero, initialX, 2 * TILE_SIZE);
+        addObject(theHero, initialX, getHeight() / 4 * 3);
     }
 
     /**
