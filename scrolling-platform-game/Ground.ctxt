@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Ground
-comment0.text=\n\ Basic\ ground\ object.\n\ \n\ @author\ R.\ Gordon\n\ @version\ May\ 8,\ 2019\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ Ground\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=scrollableWorldX\ scrollableWorldY
 comment1.target=Ground(int,\ int)
 comment1.text=\n\ Constructor\n\ \n\ Called\ once\ when\ object\ is\ created.\n
